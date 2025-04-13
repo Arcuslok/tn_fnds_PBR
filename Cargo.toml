@@ -10,19 +10,19 @@ ndarray = "0.16.1"
 ndrustfft = "0.5.0"
 
 [profile.release]
-incremental = false      # Bueno para builds finales, evita caché incremental
-overflow-checks = false  # Mejor rendimiento (asume que has testeado bien tu código)
-strip = "symbols"        # Más agresivo que solo 'true', elimina más símbolos
-opt-level = "z"          # Optimiza para tamaño (alternativa: "s" para más equilibrio)
-lto = "fat"              # Bueno para optimización entre crates
-codegen-units = 1        # Mejor optimización (compilación más lenta)
-panic = "abort"          # Elimina infraestructura de unwinding
-debug = false            # Asegura que no hay información de debug
-#codegen-backend = "llvm" # Usa el backend más maduro (necesita Rust nightly)
+incremental = false # Good for final builds, avoids incremental caching
+overflow-checks = false # Better performance (assumes you've tested your code well)
+strip = "symbols" # More aggressive than just 'true', removes more symbols
+opt-level = "z" # Optimizes for size (alternative: "s" for more balance)
+lto = "fat" # Good for cross-crate optimization
+codegen-units = 1 # Better optimization (slower compilation)
+panic = "abort" # Removes unwinding infrastructure
+debug = false # Ensures no debug information
+#codegen-backend = "llvm" # Use the most mature backend (needs Rust nightly)
 
-# Configuraciones específicas para dependencias
+# Dependency-specific settings
 [profile.release.package."*"]
-opt-level = 3           # Máxima optimización para dependencias
+opt-level = 3 # Maximum dependency optimization
 incremental = false
 codegen-units = 1
 strip = true
