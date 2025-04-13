@@ -8,7 +8,7 @@ Rust implementation of the tn_fnds_PB vocal synthesis engine for UTAU, combining
 
 - Rust implementation of the original resampler
 - Supports standard tn_fnds flags (g, t, B, A, O, e)
-- Updated W flag with STONEMASK support
+- Updated W flag
 - Improved memory safety and performance from Rust implementation
 
 ## Missing Features (TODO)
